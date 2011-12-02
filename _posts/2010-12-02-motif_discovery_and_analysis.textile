@@ -1,0 +1,83 @@
+---
+layout: report
+title: Motif Discovery And Analysis
+analyst: agp
+researcher: bdk
+pi: rek
+data: bdk_motif
+---
+
+h2. Objective
+
+<div class="section">
+
+To identify SNPs and indels in wild type and mutant C. elegans samples in order to identify the genotypic modification responsible for transgene de-silencing in hjIs21 mutant known as huy116. Wild Type control sample hjIs21 was used as a reference.
+
+</div>
+
+h2. Generated Data
+
+<div class="section">
+
+</div>
+
+h2. Analysis
+
+<div class="section">
+Lorem ipsum dolor sit amet, accusamus pede ratione condimentum. Aliquet sociis posuere fringilla ligula dolor, ultricies hac faucibus vel convallis rutrum sed, ullamcorper id elit, in luctus interdum est erat varius suscipit, sodales non amet urna imperdiet sed amet. Amet mattis, nunc ridiculus lobortis ut duis amet, ut congue dis curabitur id dictum, purus sit ante posuere. Officia tortor porta at pellentesque eget, ut leo dictum blandit sodales nec mauris, cursus hendrerit torquent quis donec, gravida mauris, magna ac duis elit aenean mauris. Convallis felis venenatis purus integer, convallis elit quis et, congue consequat turpis eleifend suspendisse ridiculus nullam, lacus elementum. Natoque eget, ultricies nascetur.
+
+Odio libero quis tempus fringilla, eu imperdiet dignissim rutrum elementum mus, sit integer non mus, feugiat malesuada ultricies quisque felis scelerisque, ut eu risus scelerisque viverra eu. Pede est tellus et, posuere purus lobortis fames elit cillum sapien, magna penatibus mauris erat, luctus per. Lorem vitae lorem. Nec integer odio eu magna vulputate elit, vitae hymenaeos reiciendis et. Euismod pede fringilla metus ac, urna nulla consequat tempus egestas pellentesque urna. Wisi gravida maecenas ut in eget dolor. In risus blandit, lacus habitasse dolor, sed tristique libero placerat amet. Lorem vel rutrum velit eveniet, sapien rutrum vestibulum eros. Consequat dui leo faucibus duis vel, mi wisi fermentum aliquet, vestibulum adipisicing mi, pretium condimentum.
+</div>
+
+h2. Results
+
+<div class="section">
+Elementum erat luctus sem a integer, cursus a ipsum in nostra tincidunt imperdiet, inceptos quis fringilla, ligula eu ullamcorper vestibulum erat sed massa, hac nec enim vestibulum ultricies id. Nunc in urna, amet vel, quam nunc auctor aliquet ipsum tortor duis, tortor nulla quisque erat enim quisque venenatis. Eu wisi ac class morbi sociosqu libero. Nunc nunc malesuada ac volutpat nisl, vel tempus et magna quam sociis arcu. Tincidunt nascetur eros, morbi nec asperiores nec vitae, hymenaeos mi nunc hymenaeos, nisl est sapien nec neque. Morbi amet consectetuer torquent nullam vehicula ac, donec pellentesque, bibendum tristique luctus, viverra quis eget elit fringilla odio. Eleifend sit ad ipsum tortor, gravida felis dapibus, vitae commodo dolor diam, tellus id mollis metus in, et consequat tellus eu. Velit nascetur, consequat sed viverra lacinia, sodales quis ut, ultrices dolor, gravida duis ac vestibulum sit penatibus. Mauris sed diam, id proin ac in potenti, lorem semper at.
+</div>
+
+h3(section_toggle details). Technical Details
+
+
+<div class="details section collapsed">
+
+{% highlight ruby %}
+$:.unshift(File.dirname(__FILE__))
+
+require 'post_runner'
+require 'illuminati/sample_report_maker'
+
+TEST_RUNNER_TEST = true
+
+module Illuminati
+  class QcdataRunner < PostRunner
+    def initialize flowcell, test = false
+      super flowcell, test
+    end
+
+    def run
+      start_flowcell
+
+      distributions = DistributionData.distributions_for @flowcell.id
+      run_undetermined_unaligned distributions
+
+      stop_flowcell
+    end
+  end
+end
+
+
+if __FILE__ == $0
+  flowcell_id = ARGV[0]
+  if flowcell_id
+    flowcell = Illuminati::FlowcellPaths.new flowcell_id, TEST_RUNNER_TEST
+    runner = Illuminati::QcdataRunner.new flowcell, TEST_RUNNER_TEST
+    runner.run
+  else
+    puts "ERROR: call with flowcell id"
+    puts "       post_runner.rb [FLOWCELL_ID]"
+  end
+end
+
+{% endhighlight %}
+
+</div>

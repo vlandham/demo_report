@@ -35,7 +35,7 @@ small { font-size: 85%; }
 sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
 sup { top: -0.5em; }
 sub { bottom: -0.25em; }
-ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+/* ul, ol { margin: 1em 0; padding: 0 0 0 40px; } */
 dd { margin: 0 0 0 40px; }
 nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
@@ -58,7 +58,7 @@ textarea { overflow: auto; vertical-align: top; resize: vertical; }
 input:valid, textarea:valid {  }
 input:invalid, textarea:invalid { background-color: #f0dddd; }
 
-table { border-collapse: collapse; border-spacing: 0; }
+/* table { border-collapse: collapse; border-spacing: 0; } */
 td { vertical-align: top; }
 
 
@@ -83,6 +83,7 @@ header {
   width: 100%;
   display:block;
   clear:both;
+  background-color: #ddd;
 }
 
 footer {
@@ -101,8 +102,7 @@ footer {
 
 nav {
   height: 40px;
-  width: 100%;
-  background-color: #ddd;
+  float:left;
 }
 
 nav ul {
@@ -116,15 +116,44 @@ nav ul li {
 
 nav ul li a {
   text-decoration:none;
-  padding: 5px;
+  padding: 8px 0 8px 0;
   background-color: #ddd;
   display:block;
-  margin-bottom: 10px;
 }
 
 nav ul li a.selected {
   background-color: #3d3d3d;
   color: white;
+}
+
+#logo {
+  float:right;
+  margin:0;
+  padding:0;
+}
+
+#logo h1 {
+  margin:0 15px 0 0;
+  padding: 10px 0 10px 0;
+  font-size: 1.0em;
+}
+
+#head_title {
+  float:left;
+  margin:0 0 0 20px;
+  padding:0;
+}
+
+#head_title h2  {
+  margin:0 10px 0 0;
+  padding: 8px 0 10px 0;
+  font-size: 1.0em;
+  border:none;
+}
+
+#title {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 span.header_accent {
@@ -145,13 +174,43 @@ span.header_accent {
   margin: 0;
 }
 
-
-h2.section-title {
-  font-weight: normal;
+#about {
+  float:left;
+  width: 500px;
+  padding:0;
+  margin:0;
 }
 
-h2#title {
-  text-align: center;
+#about ul {
+  list-style: none;
+}
+
+a.report_link {
+  font-size: 1.3em;
+  display: block;
+  padding: 10px 0 10px 5px;
+  margin:0;
+}
+
+.details {
+  margin-bottom: 0;
+  margin-top: 0;
+  background-color: #eee;
+}
+
+.note {
+  padding: 10px;
+  border: 2px solid #DDD;
+  margin-bottom: 1.5em;
+  background: #E5ECF9;
+}
+
+.data_link {
+  font-size: 120%;
+}
+
+h2 {
+  border-bottom: 2px #ddd solid;
 }
 
 .center {
@@ -172,50 +231,6 @@ blockquote {
   color: #777;
 }
 
-/* tables */
-table.tablesorter {
-	font-family:arial;
-	background-color: #CDCDCD;
-	margin:10px 0pt 15px;
-	font-size: 8pt;
-	width: 100%;
-	text-align: left;
-}
-
-table.tablesorter thead tr th, table.tablesorter tfoot tr th {
-	background-color: #e6EEEE;
-	border: 1px solid #FFF;
-	font-size: 8pt;
-	padding: 4px;
-}
-
-table.tablesorter thead tr .header {
-	background-image: url(bg.gif);
-	background-repeat: no-repeat;
-	background-position: center right;
-	cursor: pointer;
-}
-
-table.tablesorter tbody td {
-	color: #3D3D3D;
-	padding: 4px;
-	background-color: #FFF;
-	vertical-align: top;
-}
-
-table.tablesorter tbody tr.odd td {
-	background-color:#F0F0F6;
-}
-table.tablesorter thead tr .headerSortUp {
-	background-image: url(asc.gif);
-}
-table.tablesorter thead tr .headerSortDown {
-	background-image: url(desc.gif);
-}
-table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
-background-color: #8dbdd8;
-}
-
 /* ==|== non-semantic helper classes ======================================== */
 .ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
 .ir br { display: none; }
@@ -223,6 +238,7 @@ background-color: #8dbdd8;
 .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
 .visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
 .invisible { visibility: hidden; }
+.collapsed { display: none; }
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }

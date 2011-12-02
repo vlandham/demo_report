@@ -1,12 +1,8 @@
 ---
-layout: item
-title: 
-categories:
-- baby
-- print
-- shirt
-thumb: thumb.png
-images:
-- img1.png
+layout: report
+title: Analysis
+analyst: agp
+researcher: bny
+pi: mak
 ---
 

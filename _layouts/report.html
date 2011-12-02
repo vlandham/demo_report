@@ -1,6 +1,15 @@
 ---
 layout: default
 ---
-<h1 id="title">{{ page.title }}</h1>
 <ul id="toc"></ul>
+<h1 id="title">{{ page.title }}</h1>
+<div id="about">
+  <ul>
+    <li><strong>Researcher:</strong> {{ page.researcher }}</li>
+    <li><strong>PI:</strong> {{ page.pi }}</li>
+    <li><strong>Analyst:</strong> {{ page.analyst }}</li>
+    <li><strong>Date Created:</strong> {{ page.date | date_to_string }}</li>
+  </ul>
+</div>
+<div class="clearfix"></div>
 {{ content }}

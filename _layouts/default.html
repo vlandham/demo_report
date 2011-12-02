@@ -14,10 +14,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   
   <!-- <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'> -->
-  <!-- <link rel="stylesheet" href="js/libs/coin/coin-slider-styles.css" type="text/css" /> -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/data_table.css">
+  <link rel="stylesheet" href="/css/style.css">
 
-  <script src="js/libs/modernizr-2.0.6.min.js"></script>
+  <script src="/js/libs/modernizr-2.0.6.min.js"></script>
 </head>
 
 <body>
@@ -25,9 +26,15 @@
     <header>
       <nav>
         <ul>
-          <li><a href="/">&larr; home</a></li>
+          <li><a href="/">&larr; projects</a></li>
         </ul>
         </nav>
+        <div id="head_title">
+          <h2>{{ page.title }}</h2>
+        </div>
+        <div id="logo">
+          <h1>BioCore Reports</h1>
+        </div>
     </header>
     <div class="main" role="main">
       <div id="content">
@@ -35,7 +42,7 @@
       </div>
     </div>
     <footer>
-      <p><a href="/">home</a> | <a href="about.html">about</a> | <a href="contact.html">contact</a></p> 
+      <p><a href="/">projects</a> | <a href="http://wiki/research/Bioinformatics">bioinfo wiki</a> | <a href="contact.html">contact</a></p> 
     </footer>
   </div> <!--! end of #container -->
 
@@ -44,10 +51,11 @@
 
 
   <!-- scripts concatenated and minified via ant build script-->
-  <script src="js/libs/jquery.tableofcontents.min.js"></script>
-  <script src="js/libs/jquery.tablesorter.min.js"></script>
-  <script defer src="js/plugins.js"></script>
-  <script defer src="js/script.js"></script>
+  <script src="/js/libs/jquery.tableofcontents.min.js"></script>
+  <script src="/js/libs/picnet.table.filter.min.js"></script>
+  <script src="/js/libs/jquery.dataTables.js"></script>
+  <script defer src="/js/plugins.js"></script>
+  <script defer src="/js/script.js"></script>
   <!-- end scripts-->
 
 
