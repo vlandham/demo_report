@@ -7,7 +7,7 @@ markdown:    rdiscount
 permalink:   /:year-:month-:day_:title.html
 
 #base_url: http://vlandham.com
-base_url: http://bioinfo/n/projects/jfv/biocore_reports
+baseurl: /n/projects/jfv/biocore_reports
 #base_url: /
 description: ""
 
